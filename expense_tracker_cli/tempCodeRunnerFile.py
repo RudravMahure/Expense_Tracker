@@ -11,6 +11,9 @@ sys.path.append(parent_dir)
 
 #import statements
 from modules.expense_manager import add_monthly_expense
+from modules.expense_manager import add_expense
+from modules.expense_manager import view_expense
+from modules.expense_manager import view_remaining_amount
 
 exit_menu_boolean = True #boolean variable for menu loop
         
@@ -30,15 +33,19 @@ while exit_menu_boolean:  #Loop to display the menu
                 print("\n")
             case 2:
                 print("\n")
-                print("Expense addition")
+                expense_amount = float(input("Expense amount:"))
+                expense_describe = str(input("Expense Details:"))
+                expense_date = str(input("Enter expense date(DD-MM-YYYY):"))
+                expense_list = [expense_amount,expense_describe,expense_date]
+                add_expense(expense_list)
                 print("\n")
             case 3:
                 print("\n")
-                print("View Expense")
+                view_expense()
                 print("\n")
             case 4:
                 print("\n")
-                print("Balance remaining from monthly expense")
+                view_remaining_amount()
                 print("\n")
             case 5:
                 print("\n")
